@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>MEMORIES</title>
+		<link href="bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="bootstrap-4.1.2/css/bootstrap.css" type="text/css" />
+		<link href="css/Home.css" rel="stylesheet" type="text/css" />
+		<link href="css/sweetalert.css" rel="stylesheet" type="text/css" />
+
+	</head>
+
+	<body>
+
+		<section class="section-wrap">
+			<div class="section section-1">
+				<div class="title">
+					<p>MEMORIES</p>
+				</div>
+				<div class="subtitle">
+					<p>Come for what you remember.<br />Stay for what you discover.</p>
+				</div>
+				<div class="getstart">
+					<button type="button" class="btn btn-outline-primary btn-block" id="Signup"><h3>Get Started</h3></button>
+				</div>
+				<div class="login">
+					<button type="button" class="btn btn-outline-success btn-block" id="Login"><h3>Log In</h3></button>
+				</div>
+				<div class="signup">
+					<form>
+						<div class="form-group">
+							<input type="email" class="form-control form-control-lg" id="SignEmail" aria-describedby="emailHelp" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control form-control-lg" id="SignPassword" placeholder="Password">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" id="SignUsername" placeholder="Username">
+							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						</div>
+						<button type="button" class="btn btn-outline-primary btn-lg" id="signupsubmit">Sign Up</button>
+						<button type="button" class="btn btn-outline-primary btn-lg" id="signuplogin">Log In</button>
+					</form>
+				</div>
+				<div class="login2">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control form-control-lg" id="LogUsername" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control form-control-lg" id="LogPassword" placeholder="Password">
+					</div>
+					<button type="button" class="btn btn-outline-primary btn-lg" id="loginsubmit">Log In</button>
+					<button type="button" class="btn btn-outline-primary btn-lg" id="loginsignup">Sign Up</button>
+				</form>
+				</div>
+			</div>
+
+			</div>
+
+			<div class="section section-2">
+				<div>
+					<div class="pic2">
+						<img id='pic2' src="img/2cd43b_e51d69687f924be0b8e07eecfbde621f~mv2.png" alt="pic2" />
+					</div>
+					<div class="title2">
+						<p>MEMORIES is so easy to use.</p>
+					</div>
+					<div class="subtitle2">
+						<p>We made it really, really simple for people to make a record and write whatever they want on it. </p>
+					</div>
+				</div>
+			</div>
+			<div class="section section-3"></div>
+			<div class="section section-4"></div>
+			<div class="section section-5"></div>
+		</section>
+
+		<ul class="section-btn">
+			<li class="on"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bmob.js"></script>
+		<script type="text/javascript" src="js/Home.js"></script>
+		<script src="js/sweetalert.min.js"></script>
+
+		<script type="text/javascript">
+			Bmob.initialize("b514feb8e89ccceac43b92c7c60a0625", "005680d533a3d77d73af15486312706c");
+
+			//Bmob Test code
+			//			var TestObject = Bmob.Object.extend("TestObject1");
+			//			var testObject = new TestObject();
+			//			testObject.save({
+			//				foo: "bar"
+			//			}, {
+			//				success: function(object) {
+			//					$(".success").show();
+			//				},
+			//				error: function(model, error) {
+			//					$(".error").show();
+			//				}
+			//			});
+		</script>
+
+	</body>
+
+</html>

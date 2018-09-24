@@ -1,0 +1,47 @@
+/*clear the padding*/
+
+[class*="col-"] {
+	padding: 1.5px !important;
+	margin: 0 !important;
+}
+body{
+	background-color: #F0F8FF;
+}
+#main1{
+	display: none;
+}
+
+#main2{
+	display: none;
+}
+
+#main3{
+	display: none;
+}
+
+#main4{
+	display: none;
+}
+
+/*#main1{
+	display: none;
+}*/
+#loading1{
+	display: none;
+}
+#loading2{
+	display: none;
+}
+
+#commentcontent{
+	margin-right: 20px;
+	height: 425px;
+}
+
+.ActivityButtonGroup{
+	padding-left: 20px;
+}
+
+/*#test1{
+	background: fuchsia;
+}*/

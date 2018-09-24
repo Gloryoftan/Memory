@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="bootstrap-4.1.2/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
+		<link href='css/bootstrap-datepicker.css' rel="stylesheet" type="text/css" />
+		<link href="css/spectrum.css" rel="stylesheet" type="text/css" />
+		<link href="css/loadingstyle.css" rel="stylesheet" type="text/css" />
+		<link href="css/sweetalert.css" rel="stylesheet" type="text/css" />
+
+		<title>MEMORIES</title>
+	</head>
+
+	<body>
+		<div class="pos-f-t">
+			<div class="collapse" id="navbarToggleExternalContent">
+				<div class="bg-dark p-4">
+					<button type="button" class="btn btn-link text-white" id="mainswitch1">MainPage</button>
+					<button type="button" class="btn btn-link text-white" id="mainswitch2">Edit Existing Activities</button>
+					<button type="button" class="btn btn-link text-white" id="mainswitch3">Statistics</button>
+					<button type="button" class="btn btn-link text-white" id="mainswitch4">Help</button>
+					<button type="button" class="btn btn-link text-white" id="Logout">Log Out</button>
+				</div>
+			</div>
+			<nav class="navbar navbar-dark bg-dark">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      				<span class="navbar-toggler-icon"></span>
+   				</button>
+			</nav>
+		</div>
+
+		<div class="container" id="main1">
+			<div class=" row ">
+				<div class="col-3">
+					<div>
+						<span>Date:</span>
+					</div>
+					<div id="sandbox-container">
+						<input type="text" id="datepicker">
+					</div>
+					<div>
+						<span>Comment:</span>
+					</div>
+					<div class="input-group">
+						<textarea class="form-control" id="commentcontent" aria-label="With textarea" placeholder="Say something..."></textarea>
+					</div>
+					<div>
+						<span>How was your day?</span>
+					</div>
+					<div>
+						<div id="star"></div>
+					</div>
+					<div class="input-group mb-3">
+						<div class="custom-file">
+							<input type="file" class="custom-file-input" id="inputGroupFile02">
+							<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Post a picture</label>
+						</div>
+						<div class="input-group-append">
+							<button onclick="Commentsave()">Post</button>
+							<!--		<span class="input-group-text btn" id="CommentPost" onclick="Commentsave()">Post</span>-->
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-5 timetable">
+					<div class="container">
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable0">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>00:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable1">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>00:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable2">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>01:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable3">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>01:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable4">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>02:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable5">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>02:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable6">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>03:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable7">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>03:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable8">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>04:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable9">
+             							<input type="checkbox" checked autocomplete="off">
+             								<span>04:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable10">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>05:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable11">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>05:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable12">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>06:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable13">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>06:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable14">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>07:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable15">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>07:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable16">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>08:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable17">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>08:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable18">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>09:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable19">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>09:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable20">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>10:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable21">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>10:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable22">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>11:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable23">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>11:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable24">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>12:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable25">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>12:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable26">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>13:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable27">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>13:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable28">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>14:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable29">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>14:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable30">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>15:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable31">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>15:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable32">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>16:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable33">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>16:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable34">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>17:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable35">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>17:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable36">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>18:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable37">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>18:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable38">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>19:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable39">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>19:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable40">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>20:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable41">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>20:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable42">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>21:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable43">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>21:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable44">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>22:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable45">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>22:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable46">
+             							 <input type="checkbox" checked autocomplete="off">
+             								 <span>23:00</span>
+           							</label>
+								</div>
+							</div>
+							<div class='col-6'>
+								<div class="btn-group-toggle" data-toggle="buttons">
+									<label class="btn btn-outline-dark btn-block" id="timetable47">
+             							<input type="checkbox" checked autocomplete="off">
+             								 <span>23:30</span>
+           							</label>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="col-4" id="btnleft">
+					<ul class="ActivityButtonGroup" id="PrependIndex">
+
+						<!--						
+						<li>
+							<button type="button" class="btn btn-primary btn-lg" onclick="changeStyleGreat()">Reading</button>
+						</li>
+						<li>
+							<button type="button" class="btn btn-lg text-white" onclick="changeStyleGreat2()" style="background: rgb(0,255,0);">GG</button>
+						</li>
+						<p id="test1">12345</p>
+						<button type="button" id="TimetableSave">SAVE</button>-->
+					</ul>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" data-target="#CreateActivity">
+  						Create Your Own Activities
+					</button>
+
+					<!-- Modal Activity -->
+					<div class="modal fade" id="CreateActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalCenterTitle">Create Your Own Activities</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+        								</button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="form-group">
+											<input type="text" class="form-control" id="ActivityInput" placeholder="Name" required>
+										</div>
+										<label for="formGroupExampleInput">Choose a color</label>
+										<input type='text' id="selectcolor" class="selectcolor" />
+									</form>
+								</div>
+								<div class="modal-footer">
+									<!-- Button trigger Sub-Activities -->
+									<button type="button" class="btn btn-outline-primary" id="AddSubActivity" data-toggle="modal" data-target="#CreateSubActivity">
+										Create Sub-Activities 
+									</button>
+									<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-outline-primary" type="submit" id="ActivitySave">Save Activity</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Modal Sub-Activity -->
+					<div class="modal fade" id="CreateSubActivity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalCenterTitle">Create Your Sub-Activities</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+        								</button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="btn-group dropright">
+											<button type="button" class="btn btn-outline-secondary" id="chooseactivity">
+												<span>Choose Activity</span>
+  											</button>
+											<button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="chooseactivity2">
+  											</button>
+											<div class="dropdown-menu" aria-labelledby="ChooseActivity" id="ChooseActivityMenu">
+												<!--where put the Menu-->
+											</div>
+										</div>
+										<div><br /></div>
+										<div>
+											<div class="form-group">
+												<input type="text" class="form-control" id="SubActivityInput" placeholder="Sub-Activity Name" required>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<!-- Button trigger Sub-Activities -->
+									<button type="button" class="btn btn-outline-primary" id="AddActivity2" data-toggle="modal" data-target="#CreateActivity">
+										Create Activities 
+									</button>
+									<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-outline-primary" id="SubActivitySave">Save Sub-Activity</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="main2">
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-5">
+					<span>
+						<h2>Activities</h2><br />
+					</span>
+					<div id="ActivitiesChange">
+					</div>
+
+					<div class="modal fade" id="ModifyActivityModal" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Modify Activity</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+        								</button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="form-group">
+											<input type="text" class="form-control" id="ModifyActivityInput" required>
+										</div>
+										<label for="formGroupExampleInput">Choose a color</label>
+										<input type='text' class="selectcolor" id="selectcolor2" />
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-outline-primary" id="ModifyActivitySave">Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="col-5">
+					<span>
+						<h2>SubActivities</h2><br />
+					</span>
+					<div id="SubActivitiesChange">
+					</div>
+					<div class="modal fade" id="ModifySubActivityModal" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Modify Sub-Activity</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          								<span aria-hidden="true">&times;</span>
+        								</button>
+								</div>
+								<div class="modal-body">
+									<form>
+										<div class="form-group">
+											<input type="text" class="form-control" id="ModifySubActivityInput" required>
+										</div>
+									</form>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" id="ModifySubActivitySave">Save changes</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="container" id="main3">
+			<div class="row">
+				<div id="sandbox-container2">
+					<input type="text" id="datepicker2">
+				</div>
+			</div>
+			<div class="row">
+				<canvas id="DailyPolarareaChart"></canvas>
+			</div>
+		</div>
+
+		<div class="container" id="main4">
+			<div class="accordion" id="accordionExample">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span>Q1: How to record your time?</span>
+        </button>
+      </h5>
+					</div>
+
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+						<div class="card-body">
+							<span>There are 2 steps to record your time:</span><br />
+							<span>1. Choose the time table.</span><br />
+							<span>2. Click the activity/subactivity button.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h5 class="mb-0">
+        						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          						<span>Q2: How to create your own activities?</span>
+        						</button>
+     					 </h5>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body">
+							<span>There are 3 steps to create your own activities.</span><br />
+							<span>1: Click the "Create Your Own Activities" on the right side.</span><br />
+							<span>2: Input the activity name and choose the color.</span><br />
+							<span>3: Save your own activity.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h5 class="mb-0">
+        						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          						<span>Q3: How to create your own sub-activities?</span>
+        						</button>
+     				 	</h5>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+						<div class="card-body">
+							<span>There are 3 steps to create your own sub-activities.</span><br />
+							<span>1: Click the "Create Your Own Activities" on the right side.</span><br />
+							<span>2: Then click the "Create Sub-Activities" on the left corner.</span><br />
+							<span>3: Choose the activity and input the sub-activity name.</span><br />
+							<span>3: Save your own sub-activity.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingFour">
+						<h5 class="mb-0">
+        						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          						<span>Q4: How to create your own sub-activities?</span>
+        						</button>
+     				 	</h5>
+					</div>
+					<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+						<div class="card-body">
+							<span>There are 4 steps to create your own sub-activities.</span><br />
+							<span>1: Click the "Create Your Own Activities" on the right side.</span><br />
+							<span>2: Then click the "Create Sub-Activities" on the left corner.</span><br />
+							<span>3: Choose the activity and input the sub-activity name.</span><br />
+							<span>4: Save your own sub-activity.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingFive">
+						<h5 class="mb-0">
+        						<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          						<span>Q5: How to find my previous record?</span>
+        						</button>
+     				 	</h5>
+					</div>
+					<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+						<div class="card-body">
+							<span>There is 1 step to find your previous record.</span><br />
+							<span>1: Choose the date and the record of that will show.</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container" id="loading1">
+			<ul id="spinners">
+				<li class="active" data-id="1">
+					<div id="preloader_1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</li>
+		</div>
+
+		<div class="container" id="loading2">
+			<li data-id="2">
+				<div class="active" id="preloader_2">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</li>
+		</div>
+
+		<script src="js/jquery.min.js "></script>
+		<script src="js/jquery.raty.min.js"></script>
+		<script type="text/javascript" src="js/bmob.js"></script>
+		<script type="text/javascript" src="js/popper.min.js"></script>
+		<script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+		<script type="text/javascript" src="bootstrap-4.1.2/js/bootstrap.js "></script>
+		<script src="js/bootstrap-datepicker.js"></script>
+		<script src="js/spectrum.js"></script>
+		<script src="js/sweetalert.min.js"></script>
+		<script src="js/Main2.js"></script>
+
+		<script type="text/javascript">
+			Bmob.initialize("b514feb8e89ccceac43b92c7c60a0625", "005680d533a3d77d73af15486312706c");
+		</script>
+
+	</body>
+
+</html>
